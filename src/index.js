@@ -66,6 +66,7 @@ function animate(current, next, prevX, prevY) {
 
 }
 knightButton.addEventListener('click', (e)=> {
+    e.preventDefault();
     if (mode !== 'travailing') {
         if (mode === 'selectKnight') {
             mode = 'none';
@@ -82,6 +83,7 @@ knightButton.addEventListener('click', (e)=> {
 });
 
 endButton.addEventListener('click', (e)=> {
+    e.preventDefault();
     if (mode !== 'travailing') {
         if (mode === 'selectSquare') {
             mode = 'none';
@@ -95,6 +97,7 @@ endButton.addEventListener('click', (e)=> {
 });
 
 travailButton.addEventListener('click', ()=> {
+    e.preventDefault();
     disableAll();
     travailButton.classList.add('selected');
     mode = 'none';
