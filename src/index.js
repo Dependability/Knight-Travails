@@ -14,6 +14,8 @@ function disableAll() {
     knightButton.classList.remove('selected');
     endButton.classList.remove('selected');
     travailButton.classList.remove('selected');
+    ghostKnight.classList.add('hidden');
+    ghostFlag.classList.add('hidden');
 
 }
 function travail() {
@@ -61,16 +63,28 @@ function animate(current, next, prevX, prevY) {
 
 }
 knightButton.addEventListener('click', (e)=> {
-    if (mode === 'none') {
+    if (mode !== 'travailing') {
+        if (mode === 'selectKnight') {
+            mode = 'none';
+            disableAll();
+            return
+        }
+
     disableAll();
     knightButton.classList.add('selected');
     mode = 'selectKnight';
-}
+} 
+
 
 });
 
 endButton.addEventListener('click', (e)=> {
-    if (mode === 'none') {
+    if (mode !== 'travailing') {
+        if (mode === 'selectSquare') {
+            mode = 'none';
+            disableAll();
+            return
+        }
         disableAll();
         endButton.classList.add('selected');
         mode = 'selectSquare';
@@ -80,9 +94,12 @@ endButton.addEventListener('click', (e)=> {
 travailButton.addEventListener('click', ()=> {
     disableAll();
     travailButton.classList.add('selected');
+    mode = 'none';
     if (startLocation && endLocation) {
         //travail
         travail()
+    } else {
+        disableAll();
     }
 })
 
@@ -116,7 +133,6 @@ function squareClick(e) {
 }
 
 function ghostHover(e) {
-    console.log(mode)
     if (mode == 'travailing') return;
     
     switch (mode) {
@@ -133,7 +149,6 @@ function ghostHover(e) {
 }
 
 function ghostLeave(e) {
-    console.log('left')
     if (mode == 'travailing') return;
     switch (mode) {
         case 'selectKnight':
