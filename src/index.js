@@ -3,6 +3,8 @@ let mode = 'none';
 let startLocation;
 let endLocation;
 let prevEnd;
+
+
 const knight = document.querySelector('.knight');
 const knightButton = document.querySelector('.knight-but');
 const endButton = document.querySelector('.end-but');
@@ -54,12 +56,13 @@ function travail() {
 }
 
 function animate(current, next, prevX, prevY) {   
+    let jump = (window.innerWidth > 650) ? 75 : 450/8;
     const x = +next[0] - +current[0];
     
     const y = +next[1] - +current[1];
-    knight.style.transform = `translate(${prevY + +(y * 75)}px, ${prevX + +(x * 75)}px)`;
+    knight.style.transform = `translate(${prevY + +(y * jump)}px, ${prevX + +(x * jump)}px)`;
     
-    return [prevX + +(x* 75) , prevY + +(y * 75)];
+    return [prevX + +(x* jump) , prevY + +(y * jump)];
 
 }
 knightButton.addEventListener('click', (e)=> {
