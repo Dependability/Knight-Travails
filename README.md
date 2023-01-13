@@ -4,4 +4,4 @@ A small site that calculates the shortest path a knight needs to travel from one
 
 The knight uses a queue to make sure that the functions that were called first, will be answered first. 
 
-[Live Demo :point_left:](https://dependability.github.io/knight-travails)
+[Live Demo :point_left:](https://dependability.github.io/Knight-Travails/)
