@@ -96,7 +96,7 @@ endButton.addEventListener('click', (e)=> {
     }
 });
 
-travailButton.addEventListener('click', ()=> {
+travailButton.addEventListener('click', (e)=> {
     e.preventDefault();
     disableAll();
     travailButton.classList.add('selected');
