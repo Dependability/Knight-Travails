@@ -1,0 +1,150 @@
+html, button {
+    font-family: 'Sofia Sans', 'sans-serif'
+}
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.grid {
+    display: grid;
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-columns: repeat(8, 1fr);
+    /* box-shadow: 0px 1px 14px black; */
+    justify-content: center;
+    align-content: center;
+    width: 600px;
+    height: 600px;
+
+    border: 2px grey solid;
+}
+
+
+h1 {
+    margin: 10px auto 0;
+    font-size: 56px;
+    width: fit-content;
+}
+
+.invis {
+    width: 100px;
+    padding: 10px;
+    border: 3px;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+
+}
+
+.controls {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+}
+
+.controls  button {
+    font-weight: 600;
+    font-size: 16px;
+    height: 100px;  
+    width: 100px;
+    padding: 10px;
+    margin:0;
+    box-sizing: content-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: rgb(192, 58, 58);
+    border: 3px solid rgb(148, 48, 48);
+    border-radius: 5px;
+    color: white;
+
+
+}
+
+.controls button:hover, .controls .selected {
+    background-color: rgb(148, 32, 32);
+}
+
+.controls svg, .controls img {
+    width: 75px;
+
+}
+.black {
+    background-color: grey;
+}
+
+.hidden {
+    display: none;
+}
+
+.target {
+    background-image: url(./assets/flag.svg)
+}
+
+
+
+.square {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.knight {
+    
+    z-index: 1;
+    height: 40px;
+    width: 40px;
+    transition: all 750ms;
+    transform: translate(0,0);
+}
+
+.ghostflag {
+    position: fixed;
+
+    height: 75px;
+    width: 75px;
+    opacity: .5;
+}
+
+.ghostknight {
+    position: fixed;
+    height: 40px;
+    width: 40px;
+    opacity: .5;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    padding: 10px;
+    height: 30px;   
+    background-color: rgb(211, 211, 211);
+    gap: 4px;
+    align-items: center;
+}
+
+footer a {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    color: inherit;
+}
+
+footer a:hover {
+    color: rebeccapurple;
+    fill: rebeccapurple;
+}
