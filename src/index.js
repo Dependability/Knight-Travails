@@ -56,7 +56,7 @@ function travail() {
 }
 
 function animate(current, next, prevX, prevY) {   
-    let jump = (window.innerWidth > 650) ? 75 : 450/8;
+    let jump = (window.innerWidth > 650) ? 75 : 300/8;
     const x = +next[0] - +current[0];
     
     const y = +next[1] - +current[1];
